@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja Recebidinhos - Tendências do TikTok</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Poppins', 'sans-serif'] },
+                    colors: { drop: { pink: '#ff0050', cyan: '#00f2fe', black: '#121212', bg: '#f9fafb' } }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-text { background: linear-gradient(to right, #ff0050, #00f2fe); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .tiktok-shadow { box-shadow: 4px 4px 0 #00f2fe, -4px -4px 0 #ff0050; }
+        
+        .modal { opacity: 0; pointer-events: none; transition: opacity 0.3s; }
+        .modal.active { opacity: 1; pointer-events: auto; }
+        .modal-content { transform: translateY(100px); opacity: 0; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .modal.active .modal-content { transform: translateY(0); opacity: 1; }
+        
+        .marquee { overflow: hidden; white-space: nowrap; width: 100%; background: #121212; color: white; padding: 5px 0; font-size: 12px; font-weight: bold; }
+        .marquee p { display: inline-block; animation: marquee 15s linear infinite; }
+        @keyframes marquee { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
+    </style>
+</head>
+<body class="bg-drop-bg text-gray-800 antialiased selection:bg-drop-pink selection:text-white pb-20 md:pb-0">
+
+    <div class="marquee">
+        <p>🔥 FRETE GRÁTIS PARA TODO BRASIL NAS COMPRAS ACIMA DE R$ 99 🔥 PRODUTOS VIRAIS DO TIKTOK 🔥 GARANTIA DE SATISFAÇÃO 🔥</p>
+    </div>
+
+    <header class="bg-white border-b-2 border-gray-100 sticky top-0 z-40">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="font-black text-2xl tracking-tighter italic">
+                RECEBI<span class="text-drop-pink">DINHOS</span><span class="text-drop-cyan text-xl">.com</span>
+            </div>
+            
+            <div class="hidden md:block flex-grow max-w-lg mx-6">
+                <input type="text" placeholder="O que você viu no app vizinho hoje?" class="w-full bg-gray-100 rounded-full px-5 py-2.5 outline-none focus:ring-2 focus:ring-drop-cyan text-sm font-medium transition">
+            </div>
+
+            <div class="flex gap-3">
+                <button onclick="document.getElementById('modal-login').classList.add('active')" class="text-sm font-bold hover:text-drop-pink transition hidden md:block px-2">Conta</button>
+                <button onclick="document.getElementById('modal-cad').classList.add('active')" class="bg-drop-black text-white px-5 py-2.5 rounded-full font-bold text-sm hover:bg-gray-800 transition flex items-center gap-2">
+                    🛒 <span class="hidden sm:inline">Comprar</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sec 1: Hero -->
+    <section class="max-w-7xl mx-auto px-4 py-8 md:py-16">
+        <div class="bg-drop-black rounded-3xl overflow-hidden relative min-h-[400px] flex items-center p-8 md:p-16">
+            <div class="absolute inset-0 z-0 opacity-40">
+                <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Viral" class="w-full h-full object-cover" />
+            </div>
+            
+            <div class="relative z-10 w-full md:w-1/2 text-white" data-aos="fade-right">
+                <span class="bg-drop-pink text-white text-xs font-black uppercase tracking-wider px-3 py-1 rounded-full mb-4 inline-block animate-bounce">Viralizou!</span>
+                <h1 class="text-4xl md:text-6xl font-black mb-4 leading-tight italic">
+                    Achadinhos que você <br><span class="gradient-text">precisa ter.</span>
+                </h1>
+                <p class="text-gray-300 mb-8 font-medium max-w-sm">Os produtos mais desejados da internet com frete grátis e descontos absurdos.</p>
+                <button onclick="document.getElementById('modal-cad').classList.add('active')" class="bg-white text-drop-black font-black uppercase px-8 py-4 rounded-full hover:scale-105 transition transform shadow-xl tiktok-shadow">
+                    Ver Promoções
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sec 2: Produtos Virais -->
+    <section class="py-12 max-w-7xl mx-auto px-4">
+        <h2 class="text-3xl font-black mb-8 italic flex items-center gap-2">
+            Trending Now <span class="text-drop-pink text-4xl">↗</span>
+        </h2>
+        
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+            <!-- P1 -->
+            <div class="bg-white p-3 md:p-4 rounded-2xl shadow-sm hover:shadow-xl transition group relative" data-aos="zoom-in">
+                <span class="absolute top-3 right-3 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full z-10">-40%</span>
+                <div class="aspect-square rounded-xl overflow-hidden mb-4 bg-gray-100">
+                    <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-300" />
+                </div>
+                <h3 class="font-bold text-sm mb-1 leading-tight line-clamp-2">Smartwatch Pro Max Ultra - Monitor Cardíaco</h3>
+                <div class="flex items-center gap-2 mb-3">
+                    <span class="text-gray-400 text-xs line-through">R$ 299,90</span>
+                    <span class="text-lg font-black text-drop-pink">R$ 179,90</span>
+                </div>
+                <button onclick="document.getElementById('modal-cad').classList.add('active')" class="w-full bg-drop-black text-white font-bold py-2 rounded-xl hover:bg-gray-800 transition">Eu Quero</button>
+            </div>
+
+            <!-- P2 -->
+            <div class="bg-white p-3 md:p-4 rounded-2xl shadow-sm hover:shadow-xl transition group relative" data-aos="zoom-in" data-aos-delay="100">
+                <span class="absolute top-3 left-3 bg-drop-cyan text-drop-black text-xs font-bold px-2 py-1 rounded-full z-10">Frete Grátis</span>
+                <div class="aspect-square rounded-xl overflow-hidden mb-4 bg-gray-100">
+                    <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-300" />
+                </div>
+                <h3 class="font-bold text-sm mb-1 leading-tight line-clamp-2">Fone Bluetooth TWS Invisível - Som HD</h3>
+                <div class="flex items-center gap-2 mb-3">
+                    <span class="text-gray-400 text-xs line-through">R$ 149,90</span>
+                    <span class="text-lg font-black text-drop-pink">R$ 89,90</span>
+                </div>
+                <button onclick="document.getElementById('modal-cad').classList.add('active')" class="w-full bg-drop-black text-white font-bold py-2 rounded-xl hover:bg-gray-800 transition">Eu Quero</button>
+            </div>
+
+            <!-- P3 -->
+            <div class="bg-white p-3 md:p-4 rounded-2xl shadow-sm hover:shadow-xl transition group relative" data-aos="zoom-in" data-aos-delay="200">
+                <div class="aspect-square rounded-xl overflow-hidden mb-4 bg-gray-100">
+                    <img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-300" />
+                </div>
+                <h3 class="font-bold text-sm mb-1 leading-tight line-clamp-2">Ring Light LED Portátil p/ Celular</h3>
+                <div class="flex items-center gap-2 mb-3">
+                    <span class="text-lg font-black text-drop-pink">R$ 49,90</span>
+                </div>
+                <button onclick="document.getElementById('modal-cad').classList.add('active')" class="w-full bg-drop-black text-white font-bold py-2 rounded-xl hover:bg-gray-800 transition">Eu Quero</button>
+            </div>
+
+            <!-- P4 -->
+            <div class="bg-white p-3 md:p-4 rounded-2xl shadow-sm hover:shadow-xl transition group relative" data-aos="zoom-in" data-aos-delay="300">
+                <span class="absolute top-3 right-3 bg-yellow-400 text-black text-xs font-bold px-2 py-1 rounded-full z-10">Restam 3</span>
+                <div class="aspect-square rounded-xl overflow-hidden mb-4 bg-gray-100">
+                    <img src="https://images.unsplash.com/photo-1629198728070-8b1b2f9011de?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-300" />
+                </div>
+                <h3 class="font-bold text-sm mb-1 leading-tight line-clamp-2">Umidificador Difusor Chama Falsa RGB</h3>
+                <div class="flex items-center gap-2 mb-3">
+                    <span class="text-gray-400 text-xs line-through">R$ 189,90</span>
+                    <span class="text-lg font-black text-drop-pink">R$ 119,90</span>
+                </div>
+                <button onclick="document.getElementById('modal-cad').classList.add('active')" class="w-full bg-drop-black text-white font-bold py-2 rounded-xl hover:bg-gray-800 transition">Eu Quero</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sec 3: Prova Social -->
+    <section class="py-16 bg-white border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-black mb-10 italic">A galera pirou! 😲</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-gray-50 p-6 rounded-2xl" data-aos="fade-up">
+                    <div class="flex text-yellow-400 mb-3 justify-center text-xl">★★★★★</div>
+                    <p class="font-medium text-sm mb-4">"Chegou em 12 dias certinho. O relógio é perfeito, embalagem bem protegida. Recomendo muito!"</p>
+                    <div class="font-bold text-xs uppercase text-gray-500">@marcos.silva - São Paulo/SP</div>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-2xl" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex text-yellow-400 mb-3 justify-center text-xl">★★★★★</div>
+                    <p class="font-medium text-sm mb-4">"Vi no tiktok e não aguentei rsrs. O umidificador é lindo, deixou meu quarto muito chique."</p>
+                    <div class="font-bold text-xs uppercase text-gray-500">@ju.oliveira_ - Curitiba/PR</div>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-2xl" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex text-yellow-400 mb-3 justify-center text-xl">★★★★★</div>
+                    <p class="font-medium text-sm mb-4">"Atendimento top no whats. Tive dúvida de como rastrear e me ajudaram na hora. Fone aprovado!"</p>
+                    <div class="font-bold text-xs uppercase text-gray-500">@carlos.dev - Salvador/BA</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mobile Nav Bar -->
+    <nav class="md:hidden fixed bottom-0 w-full bg-white border-t border-gray-200 flex justify-around p-3 z-40 pb-safe shadow-[0_-5px_15px_rgba(0,0,0,0.05)]">
+        <button class="flex flex-col items-center text-drop-pink font-bold">
+            <span class="text-xl mb-1">🏠</span>
+            <span class="text-[10px] uppercase">Home</span>
+        </button>
+        <button onclick="document.getElementById('modal-cad').classList.add('active')" class="flex flex-col items-center text-gray-500 font-bold hover:text-drop-pink transition">
+            <span class="text-xl mb-1">🔍</span>
+            <span class="text-[10px] uppercase">Busca</span>
+        </button>
+        <button onclick="document.getElementById('modal-cad').classList.add('active')" class="flex flex-col items-center text-gray-500 font-bold hover:text-drop-pink transition">
+            <span class="text-xl mb-1">🛒</span>
+            <span class="text-[10px] uppercase">Carrinho</span>
+        </button>
+        <button onclick="document.getElementById('modal-login').classList.add('active')" class="flex flex-col items-center text-gray-500 font-bold hover:text-drop-pink transition">
+            <span class="text-xl mb-1">👤</span>
+            <span class="text-[10px] uppercase">Perfil</span>
+        </button>
+    </nav>
+
+    <!-- Footer -->
+    <footer class="bg-drop-black text-white pt-16 pb-8 text-center md:text-left mt-8">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-10">
+            <div>
+                <div class="font-black text-2xl tracking-tighter italic mb-4">
+                    RECEBI<span class="text-drop-pink">DINHOS</span><span class="text-drop-cyan text-xl">.com</span>
+                </div>
+                <p class="text-gray-400 text-sm mb-2 font-medium">Loja segura. Pagamento processado via Appmax.</p>
+                <a href="mailto:contato@lojarecebidinhos.com.br" class="text-drop-cyan font-bold hover:underline">contato@lojarecebidinhos.com.br</a>
+            </div>
+            
+            <div class="flex flex-col items-center">
+                <span class="text-[10px] uppercase font-bold text-gray-500 mb-2">Segurança garantida por:</span>
+                <a href="https://www.reclameaqui.com.br/empresa/stonfycobrancas-ltda/sobre/" target="_blank" class="block bg-white p-2 rounded-xl hover:scale-105 transition transform">
+                    <img src="selo-ra.png" alt="Selo Reclame Aqui" class="h-12 object-contain" />
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <div id="modal-login" class="modal fixed inset-0 z-[100] flex items-end md:items-center justify-center p-0 md:p-4">
+        <div class="absolute inset-0 bg-black/50 backdrop-blur-sm" onclick="document.getElementById('modal-login').classList.remove('active')"></div>
+        <div class="modal-content bg-white w-full md:max-w-sm rounded-t-3xl md:rounded-3xl p-8 relative z-10 shadow-2xl">
+            <button onclick="document.getElementById('modal-login').classList.remove('active')" class="absolute top-4 right-4 bg-gray-100 text-gray-500 w-8 h-8 rounded-full font-bold hover:bg-gray-200 transition">&times;</button>
+            <h3 class="text-2xl font-black text-drop-black mb-6 italic">Acompanhar Pedido</h3>
+            <form onsubmit="event.preventDefault(); alert('Login efetuado! Redirecionando...'); document.getElementById('modal-login').classList.remove('active');">
+                <input type="text" placeholder="E-mail ou CPF" required class="w-full bg-gray-50 border border-gray-200 px-5 py-4 rounded-xl mb-4 outline-none focus:border-drop-cyan font-medium transition">
+                <input type="password" placeholder="Senha" required class="w-full bg-gray-50 border border-gray-200 px-5 py-4 rounded-xl mb-6 outline-none focus:border-drop-cyan font-medium transition">
+                <button type="submit" class="w-full bg-drop-black text-white font-black uppercase py-4 rounded-xl hover:bg-gray-800 transition shadow-lg">Entrar</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="modal-cad" class="modal fixed inset-0 z-[100] flex items-end md:items-center justify-center p-0 md:p-4">
+        <div class="absolute inset-0 bg-black/50 backdrop-blur-sm" onclick="document.getElementById('modal-cad').classList.remove('active')"></div>
+        <div class="modal-content bg-white w-full md:max-w-md rounded-t-3xl md:rounded-3xl p-8 relative z-10 shadow-2xl">
+            <button onclick="document.getElementById('modal-cad').classList.remove('active')" class="absolute top-4 right-4 bg-gray-100 text-gray-500 w-8 h-8 rounded-full font-bold hover:bg-gray-200 transition">&times;</button>
+            <h3 class="text-2xl font-black text-drop-black mb-2 italic">Finalizar Compra</h3>
+            <p class="text-sm font-medium text-gray-500 mb-6">Preencha rápido para garantir o frete grátis.</p>
+            <form onsubmit="event.preventDefault(); alert('Tudo certo! Redirecionando para o Checkout seguro...'); document.getElementById('modal-cad').classList.remove('active');">
+                <input type="text" placeholder="Nome Completo" required class="w-full bg-gray-50 border border-gray-200 px-5 py-3 rounded-xl mb-3 outline-none focus:border-drop-cyan font-medium transition">
+                <input type="email" placeholder="E-mail" required class="w-full bg-gray-50 border border-gray-200 px-5 py-3 rounded-xl mb-3 outline-none focus:border-drop-cyan font-medium transition">
+                <input type="tel" placeholder="WhatsApp (Para rastreio)" required class="w-full bg-gray-50 border border-gray-200 px-5 py-3 rounded-xl mb-6 outline-none focus:border-drop-cyan font-medium transition">
+                <button type="submit" class="w-full bg-gradient-to-r from-drop-pink to-drop-cyan text-white font-black uppercase py-4 rounded-xl hover:opacity-90 transition shadow-lg shadow-drop-pink/30 tiktok-shadow">Ir para o Pagamento</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ once: true, offset: 50 });</script>
+</body>
+</html>
